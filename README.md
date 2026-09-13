@@ -2,9 +2,9 @@
 
 A single static page (`index.html` + `privacy.html` + `assets/`) — no build step, no dependencies.
 
-**Live at: https://comiclandapp.github.io/comicland-site/**
+**Live at: https://app.comicland.net/**
 
-Published via GitHub Pages, deploying from the `main` branch's root — any push to `main` goes live within a minute or two.
+Published via GitHub Pages, deploying from the `main` branch's root — any push to `main` goes live within a minute or two. `CNAME` in the repo root points the custom domain at Pages; the `comiclandapp.github.io/comicland-site/` URL still works too.
 
 ## Publishing setup (already done for this repo — kept for reference)
 
@@ -21,8 +21,8 @@ Published via GitHub Pages, deploying from the `main` branch's root — any push
 3. On GitHub: repo → **Settings** → **Pages** → under "Build and deployment", set **Source** to "Deploy from a branch", branch **main**, folder **/ (root)** → **Save**.
 4. GitHub gives you a URL like `https://<your-username>.github.io/<repo-name>/` within a minute or two.
 
-### Custom domain (optional)
-If you want `comiclandapp.com` (or similar) instead of the `github.io` URL: add a `CNAME` file to the repo root containing just your domain, and point your domain's DNS at GitHub Pages (an `A` record to GitHub's IPs, or a `CNAME` record to `<your-username>.github.io` for a subdomain) — GitHub's Pages docs walk through the exact DNS records.
+### Custom domain (already set up for this repo)
+`app.comicland.net` is configured via the `CNAME` file in the repo root plus DNS pointed at GitHub Pages. To point a different domain instead: change (or add) the `CNAME` file to contain just that domain, and point its DNS at GitHub Pages (an `A` record to GitHub's IPs, or a `CNAME` record to `<your-username>.github.io` for a subdomain) — GitHub's Pages docs walk through the exact DNS records.
 
 ## Editing
 

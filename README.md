@@ -1,14 +1,18 @@
 # ComicLand website
 
-A single static page (`index.html` + `assets/`) — no build step, no dependencies.
+A single static page (`index.html` + `privacy.html` + `assets/`) — no build step, no dependencies.
 
-## Publish it free on GitHub Pages
+**Live at: https://comiclandapp.github.io/comicland-site/**
+
+Published via GitHub Pages, deploying from the `main` branch's root — any push to `main` goes live within a minute or two.
+
+## Publishing setup (already done for this repo — kept for reference)
 
 1. Create a new **public** GitHub repo (e.g. `comicland-site`), or reuse an existing one.
-2. Copy `index.html` and the `assets/` folder into the repo root and push:
+2. Copy `index.html`, `privacy.html`, and the `assets/` folder into the repo root and push:
    ```bash
    git init
-   git add index.html assets
+   git add index.html privacy.html assets
    git commit -m "ComicLand site"
    git branch -M main
    git remote add origin git@github.com:<your-username>/<repo-name>.git

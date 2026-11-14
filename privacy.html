@@ -186,7 +186,7 @@
     <div class="wrap">
       <img class="icon" src="assets/img/icon.png" alt="ComicLand app icon">
       <h1>Privacy Policy</h1>
-      <div class="updated">Effective: August 30, 2026 &middot; Last updated: September 13, 2026</div>
+      <div class="updated">Effective: August 30, 2026 &middot; Last updated: November 14, 2026</div>
       <a class="back" href="index.html">&larr; Back to ComicLand</a>
     </div>
   </header>
@@ -194,80 +194,113 @@
   <main>
     <div class="wrap">
 
-      <p class="lede">ComicLand is built to run entirely on your device. There is no ComicLand account, no ComicLand server, and no analytics or advertising SDK anywhere in the app — your collection data stays on your iPhone or iPad unless you choose to export it.</p>
+      <p class="lede">ComicLand runs on your own devices: iPhone, iPad, Mac, Apple Watch and Android. There is no ComicLand account, no ComicLand server, and no analytics, crash-reporting or advertising code anywhere in the app. Your collection stays on your device unless you export it yourself.</p>
 
       <h2>What ComicLand stores on your device</h2>
-      <p>Everything you enter — comics, series, creators, publishers, characters, reading maps, notes, and status (owned, wishlist, for sale, for trade, loaned) — is saved locally in a database on your device. ComicLand does not upload this data to any server operated by the developer, and no one but you can see it.</p>
+      <p>Everything you enter is saved in a database on your device. That includes comics, series, creators, publishers, characters, reading orders, notes, prices and status (owned, wishlist, for sale, for trade, loaned). ComicLand never uploads it to a server run by the developer, and no one but you can see it.</p>
+      <p>Like any app's data, on iPhone and iPad it is part of your device's own iCloud or computer backup if you have that turned on. On Android, ComicLand keeps its database out of Google's automatic backup and device-to-device transfer. To move a library to a new Android phone, use Back up and Restore in Settings.</p>
 
-      <h2>Camera and photo library</h2>
-      <p>ComicLand asks for two permissions, both used only for the feature you're actively using at that moment:</p>
+      <h2>Permissions</h2>
+      <p>ComicLand only asks for these when you use the feature that needs them:</p>
       <ul>
-        <li><strong>Camera</strong> — to scan a comic's barcode and to capture your own cover, back cover, spine, or dust-jacket photos.</li>
-        <li><strong>Photo Library</strong> — to display cover images you've chosen or captured within the app.</li>
+        <li><strong>Camera</strong>: to scan a comic's barcode, and to take your own photos of covers, back covers, spines or dust jackets.</li>
+        <li><strong>Photos</strong>: to choose cover images from your photo library. On iPhone and iPad, ComicLand also remembers which library photo each cover came from, so it can find the same photo again after you restore a backup. The Mac app reads your Photos library, without changing it, to show those covers.</li>
+        <li><strong>Network</strong> (Android lists this separately): to search comic databases and load cover images.</li>
       </ul>
-      <p>Photos and scans are used to populate your local collection entries; they are not transmitted anywhere except when you explicitly search a comic database (below), which sends only the barcode/search text, not your photos.</p>
+      <p>Android's permission list also shows a few background-task permissions (foreground service, run at startup, keep awake). They come from Android's standard background-work library. ComicLand does not use them for anything.</p>
+      <p>Your photos and scans never leave your device. A search sends only the barcode or the text you typed.</p>
 
-      <h2>Third-party comic database logins</h2>
-      <p>ComicLand can optionally import your collection from other comic-tracking services. If you choose to connect one, here's exactly what happens with your credentials:</p>
+      <h2>Comic databases you connect</h2>
+      <p>ComicLand can search, import from and refresh your collection with other comic services. Connecting one is optional. When you do, here is exactly what ComicLand keeps:</p>
       <div class="table-wrap">
         <table class="service-table">
           <thead>
           <tr>
             <th>Service</th>
             <th>How you sign in</th>
-            <th>What's stored, and where</th>
+            <th>What ComicLand keeps</th>
           </tr>
           </thead>
           <tbody>
           <tr>
+            <td>Comic Vine</td>
+            <td data-label="How you sign in">You paste in your own API key from comicvine.gamespot.com</td>
+            <td data-label="What ComicLand keeps">Your API key.</td>
+          </tr>
+          <tr>
             <td>League of Comic Geeks</td>
-            <td data-label="How you sign in">Their own login page, inside an embedded web view</td>
-            <td data-label="What's stored, and where">Only your username, in the iOS Keychain. Your password is entered on their site and never seen by ComicLand.</td>
+            <td data-label="How you sign in">Their own sign-in page, inside the app</td>
+            <td data-label="What ComicLand keeps">The session their site sets. On iPhone, iPad and Mac, also the username and password you type into ComicLand's form, if you use it. On Android, only a note of your username.</td>
           </tr>
           <tr>
             <td>Whakoom</td>
-            <td data-label="How you sign in">Their own login page, inside an embedded web view</td>
-            <td data-label="What's stored, and where">A session cookie only. Your password is entered on their site and never seen by ComicLand.</td>
+            <td data-label="How you sign in">Their own sign-in page, inside the app</td>
+            <td data-label="What ComicLand keeps">The session their site sets. On iPhone, iPad and Mac, also the username and password you type into ComicLand's form.</td>
           </tr>
           <tr>
             <td>BDGest</td>
             <td data-label="How you sign in">A form inside ComicLand</td>
-            <td data-label="What's stored, and where">Email and password, in the iOS Keychain — sent only to BDGest's own servers to sign you in.</td>
+            <td data-label="What ComicLand keeps">Your email and password.</td>
           </tr>
           <tr>
-            <td>Grand Comics Database</td>
-            <td data-label="How you sign in">A form inside ComicLand (optional — raises your daily lookup limit)</td>
-            <td data-label="What's stored, and where">Username and password, in the iOS Keychain — sent only to the Grand Comics Database's own servers.</td>
+            <td>BDThèque</td>
+            <td data-label="How you sign in">Their own sign-in page, inside the app</td>
+            <td data-label="What ComicLand keeps">The session their site sets. No password.</td>
           </tr>
           <tr>
             <td>BubbleBD</td>
             <td data-label="How you sign in">A form inside ComicLand</td>
-            <td data-label="What's stored, and where">The session token BubbleBD issues after sign-in, in the iOS Keychain — sent only to BubbleBD's own servers to authenticate your library requests.</td>
+            <td data-label="What ComicLand keeps">The sign-in token BubbleBD issues. Your password is used once to sign in and is not kept.</td>
           </tr>
           <tr>
-            <td>Comic Vine</td>
-            <td data-label="How you sign in">You paste in your own personal API key from comicvine.gamespot.com</td>
-            <td data-label="What's stored, and where">Your API key, in the iOS Keychain — sent only to Comic Vine's own servers.</td>
+            <td>Grand Comics Database</td>
+            <td data-label="How you sign in">A form inside ComicLand (optional; it raises your daily lookup limit)</td>
+            <td data-label="What ComicLand keeps">Your username and password. On iPhone, iPad and Mac, also the session from connecting your GCD collection, if you do.</td>
+          </tr>
+          <tr>
+            <td>Tebeosfera</td>
+            <td data-label="How you sign in">A form inside ComicLand</td>
+            <td data-label="What ComicLand keeps">Your email or username and password, and the session their site sets.</td>
+          </tr>
+          <tr>
+            <td>Google Books (iPhone, iPad and Mac)</td>
+            <td data-label="How you sign in">Optionally, you paste in your own API key</td>
+            <td data-label="What ComicLand keeps">Your API key, if you add one.</td>
           </tr>
           </tbody>
         </table>
       </div>
-      <p>In every case, credentials are stored exclusively in your device's iOS Keychain and are sent only to that specific service's own servers to authenticate you there — never to a server operated by ComicLand's developer, and never to any analytics or advertising company.</p>
+      <p>Passwords, keys and tokens are kept in secure storage on your device. On iPhone, iPad and Mac that's the Keychain, set to this device only, so they never sync to iCloud Keychain. On Android, they're encrypted with a key held by the Android Keystore. Each one is sent only to its own service's servers, to sign you in there. They are never sent to the developer or to any analytics or advertising company.</p>
+      <p>ComicLand also looks up comics in Open Library, which needs no sign-in. Cover images load directly from wherever each service hosts them. That includes Amazon S3 for League of Comic Geeks.</p>
 
       <h2>Backup and export</h2>
-      <p>ComicLand can export your collection as a file, which you save using Apple's standard Files picker — to iCloud Drive, Dropbox, or any other storage location you have set up on your device. That export contains your collection data (comics, series, notes, status, and so on); cover images you've captured or added stay on your device and are not included in the export file. ComicLand does not integrate directly with iCloud or Dropbox and does not have its own server to receive this file; where it ends up is entirely up to you and the storage provider you pick.</p>
+      <p>ComicLand can export your collection as a file, saved wherever you pick with your device's file picker. The developer never receives it.</p>
+      <ul>
+        <li><strong>iPhone and iPad:</strong> the export holds your collection data. Cover images you added are left out unless you tick "Include images". The export also holds the photo-library references described above.</li>
+        <li><strong>Android:</strong> the export holds your collection database only. Cover images are not included.</li>
+      </ul>
 
-      <h2>Analytics, advertising, and tracking</h2>
-      <p>ComicLand contains no analytics SDK, no crash-reporting SDK, and no advertising SDK of any kind. Nothing about your usage of the app is collected or transmitted to the developer or to any third party for tracking or advertising purposes.</p>
+      <h2>Other things that leave your device, only when you choose</h2>
+      <ul>
+        <li><strong>Sharing:</strong> sharing a cover or image hands that one image to the app you pick.</li>
+        <li><strong>Technical support:</strong> this opens your own mail app with the app version in the subject. Nothing is sent until you send it.</li>
+        <li><strong>Apple Watch:</strong> the watch app gets series lists and details from your iPhone, nowhere else.</li>
+        <li><strong>Home Screen widget</strong> (iPhone and iPad): it shows your recent series from your library on the device, and loads their covers directly from where those images are hosted.</li>
+        <li><strong>Mac:</strong> the Mac app opens a ComicLand library file that you choose.</li>
+      </ul>
+
+      <h2>Analytics, advertising and tracking</h2>
+      <p>ComicLand has no analytics, crash-reporting or advertising code of any kind. On Android it doesn't use Google Play Services either. Nothing about how you use the app is collected or sent to the developer or to anyone else for tracking or advertising.</p>
 
       <h2>Children's privacy</h2>
-      <p>ComicLand is not directed at children and does not knowingly collect personal information from anyone under 13. Since the app stores data locally and has no account system, no personal information is collected from any user in the first place.</p>
+      <p>ComicLand is not directed at children and does not knowingly collect personal information from anyone under 13. It has no account system and keeps data on your device, so it collects no personal information from anyone.</p>
 
       <h2>Deleting your data</h2>
-      <p>Uninstalling ComicLand removes your local collection database and any Keychain-stored credentials from your device. To disconnect a single service without uninstalling, sign out of it from ComicLand's settings, which clears its stored credential from the Keychain.</p>
+      <p>To disconnect one service, delete its sign-in in ComicLand's settings (on most services this is Sign Out). That removes everything ComicLand kept for that service. Uninstalling ComicLand removes your collection database.</p>
+      <p>On iPhone, iPad and Mac, the system can keep Keychain items after you delete an app. Delete each service's sign-in before uninstalling if you want those removed too. On Android, uninstalling removes everything.</p>
 
       <h2>Changes to this policy</h2>
-      <p>If this policy changes, the "last updated" date above will change accordingly. Continued use of ComicLand after an update means you accept the revised policy.</p>
+      <p>If this policy changes, the "last updated" date above changes too. If ComicLand ever adds an online account or sync, this policy will be updated to describe it before that ships. Continued use of ComicLand after an update means you accept the revised policy.</p>
 
       <h2>Contact</h2>
       <p>Questions about this policy or how ComicLand handles data can be sent to <a href="mailto:tony@comicland.net">tony@comicland.net</a>.</p>

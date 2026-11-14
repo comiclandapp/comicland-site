@@ -134,6 +134,50 @@
     margin: 0 10px;
   }
   footer .footer-links a:hover { text-decoration: underline; }
+
+  /* Phones: a three-column table can't fit, and scrolling it sideways
+     hides the column that matters most. Each service becomes a card whose
+     cells label themselves (data-label). */
+  @media (max-width: 600px) {
+    .wrap { padding: 0 18px; }
+    header { padding: 36px 0 28px; }
+    header h1 { font-size: 26px; }
+    main { padding: 36px 0 56px; }
+    h2 { font-size: 20px; margin-top: 32px; }
+    .lede { font-size: 17px; padding: 16px 18px; }
+    .table-wrap { overflow-x: visible; }
+    .service-table, .service-table tbody, .service-table tr, .service-table td {
+      display: block;
+      width: 100%;
+    }
+    .service-table thead { display: none; }
+    .service-table tr {
+      background: var(--blue-lighter);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 0 0 12px;
+    }
+    .service-table td {
+      border: 0;
+      padding: 0;
+    }
+    .service-table td + td { margin-top: 10px; }
+    .service-table td:first-child {
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .service-table td[data-label]::before {
+      content: attr(data-label);
+      display: block;
+      color: var(--blue-dark);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -167,41 +211,45 @@
       <p>ComicLand can optionally import your collection from other comic-tracking services. If you choose to connect one, here's exactly what happens with your credentials:</p>
       <div class="table-wrap">
         <table class="service-table">
+          <thead>
           <tr>
             <th>Service</th>
             <th>How you sign in</th>
             <th>What's stored, and where</th>
           </tr>
+          </thead>
+          <tbody>
           <tr>
             <td>League of Comic Geeks</td>
-            <td>Their own login page, inside an embedded web view</td>
-            <td>Only your username, in the iOS Keychain. Your password is entered on their site and never seen by ComicLand.</td>
+            <td data-label="How you sign in">Their own login page, inside an embedded web view</td>
+            <td data-label="What's stored, and where">Only your username, in the iOS Keychain. Your password is entered on their site and never seen by ComicLand.</td>
           </tr>
           <tr>
             <td>Whakoom</td>
-            <td>Their own login page, inside an embedded web view</td>
-            <td>A session cookie only. Your password is entered on their site and never seen by ComicLand.</td>
+            <td data-label="How you sign in">Their own login page, inside an embedded web view</td>
+            <td data-label="What's stored, and where">A session cookie only. Your password is entered on their site and never seen by ComicLand.</td>
           </tr>
           <tr>
             <td>BDGest</td>
-            <td>A form inside ComicLand</td>
-            <td>Email and password, in the iOS Keychain — sent only to BDGest's own servers to sign you in.</td>
+            <td data-label="How you sign in">A form inside ComicLand</td>
+            <td data-label="What's stored, and where">Email and password, in the iOS Keychain — sent only to BDGest's own servers to sign you in.</td>
           </tr>
           <tr>
             <td>Grand Comics Database</td>
-            <td>A form inside ComicLand (optional — raises your daily lookup limit)</td>
-            <td>Username and password, in the iOS Keychain — sent only to the Grand Comics Database's own servers.</td>
+            <td data-label="How you sign in">A form inside ComicLand (optional — raises your daily lookup limit)</td>
+            <td data-label="What's stored, and where">Username and password, in the iOS Keychain — sent only to the Grand Comics Database's own servers.</td>
           </tr>
           <tr>
             <td>BubbleBD</td>
-            <td>A form inside ComicLand</td>
-            <td>The session token BubbleBD issues after sign-in, in the iOS Keychain — sent only to BubbleBD's own servers to authenticate your library requests.</td>
+            <td data-label="How you sign in">A form inside ComicLand</td>
+            <td data-label="What's stored, and where">The session token BubbleBD issues after sign-in, in the iOS Keychain — sent only to BubbleBD's own servers to authenticate your library requests.</td>
           </tr>
           <tr>
             <td>Comic Vine</td>
-            <td>You paste in your own personal API key from comicvine.gamespot.com</td>
-            <td>Your API key, in the iOS Keychain — sent only to Comic Vine's own servers.</td>
+            <td data-label="How you sign in">You paste in your own personal API key from comicvine.gamespot.com</td>
+            <td data-label="What's stored, and where">Your API key, in the iOS Keychain — sent only to Comic Vine's own servers.</td>
           </tr>
+          </tbody>
         </table>
       </div>
       <p>In every case, credentials are stored exclusively in your device's iOS Keychain and are sent only to that specific service's own servers to authenticate you there — never to a server operated by ComicLand's developer, and never to any analytics or advertising company.</p>
